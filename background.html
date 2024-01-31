@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color</title>
+</head>
+<body>
+<h1> Background Color Project</h1>
+<button id="colorbg"> Click me to Change Color</button>
+    <script>
+        // first we create a function to generate random color
+  function generateColor(){
+    let hex='0123456789ABCDEF';
+    let color='#';
+
+    for(let i=0;i<6;i++){
+        color+=hex[Math.floor(Math.random()*16)];
+
+    }
+    return color;
+  }
+
+  // Now, We create simple function to change the background color
+  function changeBG(){
+    let newColor=generateColor();
+    document.body.style.backgroundColor=newColor;
+
+
+  }
+  // then We add event listener for button ..
+  document.getElementById('colorbg').addEventListener('click',changeBG);
+
+    </script>
+</body>
+</html>
